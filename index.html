@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>《猫脸老太太》玩家调查攻略</title>
+<style>
+:root{
+  --paper:#eee9d9;
+  --paper2:#f7f3e8;
+  --ink:#1e1d1a;
+  --muted:#6f6a61;
+  --red:#7c1114;
+  --blue:#315f85;
+  --rule:#9d978b;
+  --note:#fff3a6;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;background:#c8c6be}
+body{
+  margin:0;color:var(--ink);
+  font-family:SimSun,"Songti SC",serif;
+  background:
+    repeating-linear-gradient(0deg,rgba(0,0,0,.025) 0 1px,transparent 1px 4px),
+    #c8c6be;
+  line-height:1.78;
+}
+.page{
+  width:min(1020px,calc(100% - 28px));
+  margin:26px auto 60px;
+  background:var(--paper2);
+  border:1px solid #77736a;
+  box-shadow:0 18px 55px rgba(0,0,0,.28);
+}
+.topline{
+  padding:5px 14px;
+  border-bottom:1px solid #aaa397;
+  font:12px SimSun,serif;
+  display:flex;justify-content:space-between;gap:10px;
+  color:#555;background:#e3e1d8
+}
+.masthead{
+  padding:24px 34px 18px;
+  border-bottom:5px solid var(--red);
+  position:relative;
+  background:#fff;
+}
+.masthead h1{
+  margin:0;
+  font:700 clamp(36px,6vw,62px)/1 STKaiti,KaiTi,SimSun,serif;
+  letter-spacing:3px;color:var(--red)
+}
+.masthead .en{
+  font:9px Arial,sans-serif;
+  letter-spacing:5px;color:#555;margin-top:5px
+}
+.masthead p{
+  max-width:700px;margin:15px 0 0;
+  font-size:14px;color:#393632
+}
+.stamp{
+  position:absolute;right:36px;top:24px;
+  border:2px solid #8e4b41;color:#8e4b41;
+  padding:7px 10px;font:bold 12px SimSun;
+  transform:rotate(4deg)
+}
+nav{
+  position:sticky;top:0;z-index:6;
+  display:flex;overflow:auto;white-space:nowrap;
+  background:linear-gradient(#a62226,#6f080b);
+  color:white;border-bottom:1px solid #4d0305
+}
+nav a{
+  color:white;text-decoration:none;
+  padding:8px 14px;border-right:1px solid #ce6667;
+  font-size:13px
+}
+main{padding:30px 38px 58px;background:var(--paper2)}
+section{margin:0 0 48px}
+h2{
+  margin:0 0 13px;
+  border-bottom:2px solid var(--red);
+  padding-bottom:5px;
+  font:bold 23px SimSun,serif;
+  color:#111
+}
+h2 small{
+  font:11px Arial,sans-serif;
+  color:var(--red);margin-right:9px
+}
+h3{margin:22px 0 7px;font-size:17px}
+p{margin:.7em 0}
+.lead{font-size:16px}
+.paperline{
+  border-top:1px dotted #888;
+  border-bottom:1px dotted #888;
+  padding:10px 0;margin:15px 0
+}
+.route{
+  margin:17px 0;
+  padding:11px 14px;
+  background:#f0ecdf;
+  border:1px solid #aaa28f;
+  border-left:5px solid var(--red);
+  font:bold 13px/1.7 SimSun,serif
+}
+.note{
+  width:min(620px,95%);
+  margin:20px 0 22px 6%;
+  padding:14px 18px;
+  background:var(--note);
+  border:1px solid #9c8f50;
+  box-shadow:3px 4px 0 rgba(80,70,35,.13);
+  transform:rotate(-.35deg);
+  font:14px/1.75 KaiTi,SimSun,serif
+}
+.note b{font-family:SimSun,serif}
+details{
+  margin:12px 0;padding:9px 0;
+  border-top:1px dashed #908979;
+  border-bottom:1px dashed #908979
+}
+summary{cursor:pointer;font-weight:bold}
+details[open] summary{color:var(--red)}
+.answer{
+  color:var(--red);font-weight:bold;
+  border-bottom:2px solid rgba(124,17,20,.25)
+}
+.timeline{
+  margin:16px 0 20px 7px;
+  border-left:2px solid #3f3b35;
+  padding-left:18px
+}
+.timeline p{
+  margin:8px 0;position:relative
+}
+.timeline p:before{
+  content:"";
+  position:absolute;left:-24px;top:.62em;
+  width:7px;height:7px;border:2px solid #333;
+  border-radius:50%;background:var(--paper2)
+}
+table{
+  width:100%;border-collapse:collapse;
+  margin:12px 0 20px;font-size:13px
+}
+th,td{
+  border:1px solid #aaa49a;
+  padding:7px 8px;text-align:left;vertical-align:top
+}
+th{background:#ddd8ca;width:26%}
+.keyword{
+  font-family:ui-monospace,SFMono-Regular,Consolas,monospace;
+  font-weight:800;color:#22557d
+}
+.warning{
+  color:#8a1012;font-weight:bold
+}
+.section-tag{
+  display:inline-block;padding:2px 6px;
+  background:#5f5b54;color:#fff;
+  font:11px Arial,sans-serif;margin-bottom:7px
+}
+.fast{
+  background:#fffdf4;
+  border:2px solid #777166;
+  padding:16px 18px
+}
+footer{
+  border-top:2px solid #777166;
+  padding:18px 34px 26px;
+  text-align:center;color:#666;
+  font-size:11px;background:#e9e7de
+}
+@media(max-width:720px){
+  .page{width:100%;margin:0;border:0;box-shadow:none}
+  .masthead,main,footer{padding-left:20px;padding-right:20px}
+  .stamp{position:static;display:inline-block;margin-top:16px}
+  .topline{font-size:10px}
+  .masthead h1{font-size:43px}
+}
+@media print{
+  body{background:#fff}.page{width:100%;margin:0;box-shadow:none;border:0}
+  nav{display:none}
+}
+</style>
+</head>
+<body>
+<div class="page">
+<div class="topline">
+  <span>鹤宁南关旧闻调查 · 玩家整理版</span>
+  <span>公开网页线索 / 严重剧透</span>
+</div>
+
+<header class="masthead">
+  <h1>猫脸老太太</h1>
+  <div class="en">PLAYER INVESTIGATION NOTES</div>
+  <p>这不是“找到一个密码就通关”的游戏。真正的推进方式，是把 1996 年旧报、二小考勤、旧门牌、南关论坛、2012 年走失帖和沈妍留下的资料互相对照。下面按玩家实际调查顺序整理。</p>
+  <div class="stamp">全流程攻略<br>建议卡住再看</div>
+</header>
+
+<nav>
+  <a href="#s1">沈妍失联</a>
+  <a href="#s2">1996旧报</a>
+  <a href="#s3">二小</a>
+  <a href="#s4">槐树巷17号</a>
+  <a href="#s5">猫脸传言</a>
+  <a href="#s6">2012旧帖</a>
+  <a href="#s7">sy0718</a>
+  <a href="#s8">旧日历</a>
+  <a href="#s9">结局</a>
+</nav>
+
+<main>
+
+<section id="s1">
+<span class="section-tag">01 / 2026-09</span>
+<h2><small>STEP 01</small>先弄清姐姐失联前在查什么</h2>
+<p class="lead">开局是《鹤宁晚报》：沈妍已经失联三天，最后确认的活动区域在南关。家属只知道她最近频繁查旧报，也常往南关跑。</p>
+<p>首页本身不是谜题。真正的入口在顶部的<strong>“数字报刊”</strong>。调查便笺已经把范围缩得很小：姐姐失联前反复查的是九十年代南关旧闻。</p>
+<div class="route">鹤宁晚报首页 → 数字报刊 → 1996 年 11 月下旬 → 连续阅读南关儿童走失报道</div>
+<div class="note"><b>玩家笔记：</b>不要只开一篇就走。这里故意让几篇报道里的数字互相不完全一致，重点是“同一时期到底有几个孩子、后来分别怎么样了”。</div>
+</section>
+
+<section id="s2">
+<span class="section-tag">02 / 1996-11</span>
+<h2><small>STEP 02</small>旧报只能看到公开说法，下一站是学校</h2>
+<p>1996 年 11 月下旬，南关连续出现儿童走失相关报道。几篇新闻口径并不完全一致，所以不要直接把“新闻里提到的人数”当成真相。</p>
+<p>旧报中反复出现的学校是：</p>
+<p><span class="answer">鹤宁市第二小学</span></p>
+<p>接下来进入二小网站。别只看当前通知，找学校保留的<strong>校史 / 旧版资料</strong>，重点是 1996 年 11 月的考勤与学籍异动。</p>
+</section>
+
+<section id="s3">
+<span class="section-tag">03 / SCHOOL ARCHIVE</span>
+<h2><small>STEP 03</small>六个缺勤名字里，真正要追的是何惠</h2>
+<p>11 月考勤表里会出现六个名字，但这里最容易误判：有人只是病假，有人是临时被家长接走，<strong>“缺勤”并不等于“全部失踪”</strong>。</p>
+<p>把考勤日期和后面的学籍异动对起来，真正异常的是：</p>
+<table>
+<tr><th>姓名</th><td><span class="answer">何惠</span></td></tr>
+<tr><th>25 日</th><td>找到</td></tr>
+<tr><th>27 日</th><td>返校</td></tr>
+<tr><th>29 日</th><td>办理转出</td></tr>
+</table>
+<p>然后继续看班务记录。那里还留着一个和何惠户籍并不一致的地址：</p>
+<p><span class="answer">槐树巷 17 号</span></p>
+</section>
+
+<section id="s4">
+<span class="section-tag">04 / LOCAL ARCHIVE</span>
+<h2><small>STEP 04</small>去地方文献馆查“槐树巷17号”</h2>
+<p>班务记录会提示：旧门牌资料现在由地方文献馆保管。所以这里不要继续在学校站里找。</p>
+<div class="route">地方文献馆 → 搜“槐树巷” / 旧门牌对照 → 找 17 号</div>
+<p>旧门牌显示，17 号登记的是<strong>冯家</strong>，户内还有两个后面非常关键的名字：</p>
+<table>
+<tr><th>住户</th><td><span class="answer">赵淑琴</span></td></tr>
+<tr><th>孩子</th><td><span class="answer">冯小兰</span></td></tr>
+</table>
+<p>文献馆里的南关口述资料还提到一个很容易被今天的人误读的旧习惯：有的老人把走丢又找回来的孩子抱回来后，会先反复叫孩子的<strong>大名</strong>。</p>
+<div class="note"><b>这一步别跳：</b>“叫大名”后来被论坛和口耳相传加工成了非常吓人的说法，它正是“猫脸老太太”传言变形的重要一环。</div>
+</section>
+
+<section id="s5">
+<span class="section-tag">05 / OLD FORUM</span>
+<h2><small>STEP 05</small>“猫脸老太太”到底指向谁</h2>
+<p>地方文献馆会提示，一部分旧讨论后来被转载到<strong>“南关人家”社区</strong>。进入老论坛后直接搜这些词最省时间：</p>
+<div class="route"><span class="keyword">猫脸</span>　/　<span class="keyword">赵淑琴</span>　/　<span class="keyword">兰兰</span></div>
+<p>把老住户回复和前面的门牌资料对起来，就能确定：</p>
+<p><strong>赵淑琴当年是在找自己的外孙女冯小兰。</strong> 后来的传言却逐渐把她说成了“抓孩子的人”。</p>
+<p>也就是说，1996 年的“猫脸老太太”至少有一部分核心叙事，是<strong>真实寻人事件被长期误传、拼接和妖魔化</strong>后的结果。</p>
+</section>
+
+<section id="s6">
+<span class="section-tag">06 / 2012-10</span>
+<h2><small>STEP 06</small>论坛里还有另一件“孩子走散”的旧事</h2>
+<p>这时别退出论坛。另一个关键帖子来自 2012 年。可以搜：</p>
+<div class="route"><span class="keyword">孩子</span>　/　<span class="keyword">早市</span>　/　<span class="keyword">旧二路终点</span></div>
+<p>目标是：</p>
+<p><span class="answer">2012 年 10 月 4 日《南关早市附近昨天是不是在找孩子？》</span></p>
+<p>帖子里记录了一个孩子走散后被找回。继续看楼里的老住户回复，会有人认出：</p>
+<p><strong>这个孩子是何惠的女儿。</strong></p>
+<div class="paperline">1996：何惠自己曾经走失、找回、返校、很快转学。<br>
+2012：何惠的女儿又在南关走散，并被找回。</div>
+</section>
+
+<section id="s7">
+<span class="section-tag">07 / USER PAGE</span>
+<h2><small>STEP 07</small>点开 sy0718 —— 这是姐姐留下的“旧闻夹”</h2>
+<p>2012 旧帖里有一个账号很特殊：</p>
+<p><span class="answer">sy0718</span></p>
+<p>直接点进这个账号的个人主页。这里就是沈妍本人留下的公开整理页。</p>
+<p>主线需要看三组东西：</p>
+<div class="timeline">
+<p>何惠 1996 年的转学材料；</p>
+<p>沈妍自己 2012 年的请假单；</p>
+<p>一张旧照片的拍摄日期 / 元数据。</p>
+</div>
+<p>把这三者放在一起，你会发现姐姐不是在单纯考证“猫脸老太太是真是假”，她已经开始追<strong>1996 与 2012 两段经历是否存在某种家庭层面的重复</strong>。</p>
+</section>
+
+<section id="s8">
+<span class="section-tag">08 / OLD CALENDAR</span>
+<h2><small>STEP 08</small>照片之后，去看何惠自己留下的旧日历</h2>
+<p>沈妍的资料页里还有一篇后来补录的旧日历。正确阅读方式是先记住那张照片的日期，再去对照 2012 年 10 月 3 日以后的几天。</p>
+<p>何惠只在那几天多写了几笔，其中最重要的内容是：</p>
+<div class="note">
+孩子回来后不肯进房间；<br>
+问过“原来住的地方”；<br>
+过了两天，才重新叫她。
+</div>
+<p>游戏没有要求你把这些文字解释成某种超自然结论。它只要求你确认：<strong>这些记录确实存在，并且沈妍失联前已经把它们和 1996 年材料放到了一起。</strong></p>
+<p>旧日历最下面还留着她下一次要去见人的安排。到这里，就该回到《鹤宁晚报》看家属后续了。</p>
+</section>
+
+<section id="s9">
+<span class="section-tag">09 / ENDING</span>
+<h2><small>STEP 09</small>最后没有隐藏密码，也没有“真相按钮”</h2>
+<p>回到晚报后，家属更新会说明：沈妍失联前提过<strong>“周叔给了一个电话”</strong>，第二天准备去南关见一名“以前住过槐树巷的人”。家属不知道对方姓名，也不知道最终见面地点。</p>
+<p>公开资料到这里就结束了。</p>
+<div class="route">没有额外密码　·　没有隐藏按钮　·　没有公开网页能继续证明她最终去见了谁</div>
+<p>也就是说，游戏最后留给玩家的并不是“网页里藏着一个确定凶手”，而是：</p>
+<div class="timeline">
+<p>1996 年“猫脸老太太”传言背后，有被误传的人和真实的寻亲关系；</p>
+<p>何惠与她女儿在两个时代里都出现过走失、找回后的异常记录；</p>
+<p>沈妍把这些材料查到这里后，又去联系了一名与槐树巷旧住户有关的人；</p>
+<p>随后，她失联了。</p>
+</div>
+<p class="warning">结局页本身明确告诉玩家：公开网页已经没有更多可以互证的内容。继续刷新、乱输密码或者找隐藏按钮都不会再推进。</p>
+</section>
+
+<section class="fast">
+<h2><small>FAST CHECK</small>卡关速查</h2>
+<table>
+<tr><th>旧报年份</th><td>1996 年 11 月下旬</td></tr>
+<tr><th>关键学校</th><td>鹤宁市第二小学</td></tr>
+<tr><th>关键学生</th><td>何惠</td></tr>
+<tr><th>关键时间</th><td>25 日找到 → 27 日返校 → 29 日转出</td></tr>
+<tr><th>关键地址</th><td>槐树巷 17 号</td></tr>
+<tr><th>门牌人物</th><td>赵淑琴 / 冯小兰</td></tr>
+<tr><th>论坛搜索词</th><td>猫脸 / 赵淑琴 / 兰兰</td></tr>
+<tr><th>2012 帖子搜索词</th><td>孩子 / 早市 / 旧二路终点</td></tr>
+<tr><th>姐姐账号</th><td><span class="answer">sy0718</span></td></tr>
+<tr><th>最后一步</th><td>旧日历 → 回晚报看家属后续</td></tr>
+</table>
+</section>
+
+</main>
+
+<footer>
+玩家调查攻略 · 根据当前仓库实际进度节点与公开页面流程整理。仅覆盖会进入主线、会被游戏状态记录引用的内容。
+</footer>
+</div>
+</body>
+</html>
